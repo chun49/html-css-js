@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tab-header">
+        <div class="active">Home</div>
+        <div>Dasboard</div>
+        <div>About</div>
+        <div>Contact</div>
+      </div>
+      <div class="tab-indicator"></div>
+      <div class="tab-body">
+        <div class="active">
+          <h1>Home</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            dolores dolorem est temporibus, repellat laudantium laboriosam
+            molestiae repellendus officiis animi culpa rerum reiciendis eius
+            possimus, amet exercitationem quia officia explicabo quaerat eos sit
+            adipisci nostrum. Nam consequatur odit et inventore distinctio quis
+            dolore obcaecati? Soluta praesentium dolores voluptate corporis
+            aperiam.
+          </p>
+        </div>
+        <div>
+          <h1>Dashboard</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            dolores dolorem est temporibus, repellat laudantium laboriosam
+            molestiae repellendus officiis animi culpa rerum reiciendis eius
+            possimus, amet exercitationem quia officia explicabo quaerat eos sit
+            adipisci nostrum. Nam consequatur odit et inventore distinctio quis
+            dolore obcaecati? Soluta praesentium dolores voluptate corporis
+            aperiam.
+          </p>
+        </div>
+        <div>
+          <h1>About</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            dolores dolorem est temporibus, repellat laudantium laboriosam
+            molestiae repellendus officiis animi culpa rerum reiciendis eius
+            possimus, amet exercitationem quia officia explicabo quaerat eos sit
+            adipisci nostrum. Nam consequatur odit et inventore distinctio quis
+            dolore obcaecati? Soluta praesentium dolores voluptate corporis
+            aperiam.
+          </p>
+        </div>
+        <div>
+          <h1>Contact</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            dolores dolorem est temporibus, repellat laudantium laboriosam
+            molestiae repellendus officiis animi culpa rerum reiciendis eius
+            possimus, amet exercitationem quia officia explicabo quaerat eos sit
+            adipisci nostrum. Nam consequatur odit et inventore distinctio quis
+            dolore obcaecati? Soluta praesentium dolores voluptate corporis
+            aperiam.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const tabs = document.querySelector(".tabs");
+      const tabBody = tabs.querySelector(".tab-body");
+      const tabHeader = tabs.querySelector(".tab-header");
+      const tabIndicator = tabs.querySelector(".tab-indicator");
+      const tabHeaderNodes = tabs.querySelectorAll(".tab-header > div");
+      const tabBodyNodes = tabs.querySelectorAll(".tab-body > div");
+
+      for (let i = 0; i < tabHeaderNodes.length; i++) {
+        tabHeaderNodes[i].addEventListener("click", function () {
+          tabHeader.querySelector(".active").classList.remove("active");
+          tabHeaderNodes[i].classList.add('active')
+          tabBody.querySelector(".active").classList.remove("active");
+          tabBodyNodes[i].classList.add('active')
+          tabIndicator.style.left = `calc(calc(calc(25% - 5px) * ${i}) + 10px)`
+        });
+      }
+    </script>
+  </body>
+</html>
